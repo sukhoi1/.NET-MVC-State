@@ -1,7 +1,9 @@
 ﻿namespace MvcState.Infrastructure
 {
-    public enum AppStateKeys
+    public enum AppStateKey
     {
-        Counter
+        Counter,
+        LastRequestTime,
+        LastRequestUrl
     }
 }

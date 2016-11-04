@@ -1,23 +1,50 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web;
 
 namespace MvcState.Infrastructure
 {
     public class AppStateHelper
     {
-        public static object Get(AppStateKeys key)
+        private static HttpApplicationState AppState = HttpContext.Current.Application;
+
+        public static object Get(AppStateKey key)
         {
             return HttpContext.Current.Application[GetKey(key)];
         }
 
-        public static object Set(AppStateKeys key, object value)
+        public static object Set(AppStateKey key, object value)
         {
             return HttpContext.Current.Application[GetKey(key)] = value;
         }
 
-        private static string GetKey(AppStateKeys key)
+        public static IDictionary<AppStateKey, object> Get(params AppStateKey[] keys)
         {
-            return Enum.GetName(typeof(AppStateKeys), key);
+            Dictionary<AppStateKey, object> data = new Dictionary<AppStateKey, object>();
+            AppState.Lock();
+            foreach (var key in keys)
+            {
+                data.Add(key, Get(key));
+            }
+
+            AppState.UnLock();
+            return data;
+        }
+
+        public static void Set(IDictionary<AppStateKey, object> data)
+        {
+            AppState.Lock();
+            foreach (var pair in data)
+            {
+                Set(pair.Key, pair.Value);
+            }
+
+            AppState.UnLock();
+        }
+
+        public static string GetKey(AppStateKey key)
+        {
+            return Enum.GetName(typeof(AppStateKey), key);
         }
     }
 }

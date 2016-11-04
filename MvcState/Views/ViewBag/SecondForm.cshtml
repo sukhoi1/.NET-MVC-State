@@ -1,0 +1,13 @@
+﻿
+@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("CompleteForm", "ViewBag"))
+{
+    <div class="form-group">
+        <label for="country">Country</label>
+        <input class="form-control" name="country" placeholder="Enter country" />
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+}

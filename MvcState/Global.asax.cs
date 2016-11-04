@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
+using MvcState.Infrastructure;
 
 namespace MvcState
 {
@@ -13,6 +10,7 @@ namespace MvcState
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            AppStateHelper.Set(AppStateKeys.Counter, 0);
         }
     }
 }

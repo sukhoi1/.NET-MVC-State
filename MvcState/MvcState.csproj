@@ -125,12 +125,15 @@
     <Compile Include="Controllers\CalcController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LockController.cs" />
+    <Compile Include="Controllers\SessionController.cs" />
     <Compile Include="Controllers\ViewBagController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\AppStateHelper.cs" />
     <Compile Include="Infrastructure\AppStateKeys.cs" />
+    <Compile Include="Infrastructure\SessionStateHelper.cs" />
+    <Compile Include="Infrastructure\SessionStateKey.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +150,9 @@
     <Content Include="Views\ViewBag\Index.cshtml" />
     <Content Include="Views\ViewBag\SecondForm.cshtml" />
     <Content Include="Views\ViewBag\CompleteForm.cshtml" />
+    <Content Include="Views\Session\SecondForm.cshtml" />
+    <Content Include="Views\Session\CompleteForm.cshtml" />
+    <Content Include="Views\Session\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

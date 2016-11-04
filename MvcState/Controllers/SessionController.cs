@@ -1,28 +1,28 @@
 ﻿using System.Web.Mvc;
-using MvcState.Infrastructure;
 
 namespace MvcState.Controllers
 {
-    public class SessionController : Controller
+    public class ViewBagController : Controller
     {
         public ActionResult Index()
         {
-            return View("../Session/Index");
+            return View();
         }
 
         [HttpPost]
         public ActionResult ProcessFirstForm(string name)
         {
-            SessionStateHelper.Set(SessionStateKey.Name, name);
-            return View("../Session/SecondForm", (object)name);
+            Debug("Name: {0}", (object)name);
+            return View("SecondForm", (object)name);
         }
 
         [HttpPost]
         public ActionResult CompleteForm(string country)
         {
-            ViewBag.Name = SessionStateHelper.Get(SessionStateKey.Name);
+            Debug("Country: {0}", (object)country);
+            ViewBag.Name = "<Unknown>";
             ViewBag.Country = country;
-            return View("../Session/CompleteForm");
+            return View();
         }
 
         private void Debug(string name, object value)

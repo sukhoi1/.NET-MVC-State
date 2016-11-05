@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<div id="results" class="alert alert-success"></div>
+<table id="msgTable" class="table table-bordered table-striped">
+    <tr><th>Messages</th></tr>
+</table>
+
+<script>
+    $(document).ready(function() {
+        var start = new Date();
+        var counter = 10;
+        for (var i=0; i<10; i++) {
+            $.get("/SessionSync/GetMessage", { id: i }, function (data) {
+                $("#msgTable tbody").append("<tr><td>" + data +"</td></tr>");
+                counter--;
+                if (counter == 0) {
+                    var time = new Date().getTime() - start.getTime();
+                    $("#results").text("Time (ms): " + time);
+                }
+            });
+        }
+    });
+</script>

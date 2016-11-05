@@ -1,5 +1,4 @@
-﻿using System.Threading;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using MvcState.Infrastructure;
 
 namespace MvcState.Controllers

@@ -126,6 +126,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LockController.cs" />
     <Compile Include="Controllers\SessionController.cs" />
+    <Compile Include="Controllers\SessionLifecycleController.cs" />
     <Compile Include="Controllers\ViewBagController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -153,6 +154,7 @@
     <Content Include="Views\Session\SecondForm.cshtml" />
     <Content Include="Views\Session\CompleteForm.cshtml" />
     <Content Include="Views\Session\Index.cshtml" />
+    <Content Include="Views\SessionLifecycle\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -126,6 +126,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LockController.cs" />
     <Compile Include="Controllers\SessionController.cs" />
+    <Compile Include="Controllers\SessionNoCookiesController.cs" />
     <Compile Include="Controllers\SessionLifecycleController.cs" />
     <Compile Include="Controllers\SessionSyncController.cs" />
     <Compile Include="Controllers\ViewBagController.cs" />
@@ -157,6 +158,7 @@
     <Content Include="Views\Session\Index.cshtml" />
     <Content Include="Views\SessionLifecycle\Index.cshtml" />
     <Content Include="Views\SessionSync\Index.cshtml" />
+    <Content Include="Views\SessionNoCookies\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
